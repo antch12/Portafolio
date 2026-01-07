@@ -21,6 +21,10 @@ builder.Services.AddSession(options =>
 builder.Services.AddScoped<TaskContext>();
 
 builder.Services.AddScoped<UserUseCase>();
+builder.Services.AddScoped<ProjectUseCase>();
+builder.Services.AddScoped<TaskPriorityUseCase>();
+builder.Services.AddScoped<TaskStatusUseCase>();
+builder.Services.AddScoped<TaskUseCase>();
 
 var app = builder.Build();
 
@@ -28,6 +32,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseSession();

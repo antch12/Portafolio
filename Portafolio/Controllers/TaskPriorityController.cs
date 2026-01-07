@@ -7,15 +7,15 @@ namespace Portafolio.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController(UserUseCase useCase) : ControllerBase
+    public class TaskPriorityController(TaskPriorityUseCase useCase) : ControllerBase
     {
-        private readonly UserUseCase _useCase = useCase;
+        private readonly TaskPriorityUseCase _useCase = useCase;
         [HttpPost]
-        public IActionResult Create(User user)
+        public IActionResult Create(TaskPriority user)
         {
             try
             {
-                _useCase.Add(user);  
+                _useCase.Add(user);
                 return Ok();
             }
             catch
@@ -24,11 +24,11 @@ namespace Portafolio.Controllers
             }
         }
         [HttpPut("{id}")]
-        public IActionResult Update(User user)
+        public IActionResult Update(TaskPriority request)
         {
             try
             {
-                _useCase.Update(user);
+                _useCase.Update(request);
                 return Ok();
             }
             catch

@@ -4,27 +4,27 @@ using System.Collections.Generic;
 
 namespace Portafolio.UseCases
 {
-    public class UserUseCase : AbstractRepository<User>
+    public class ProjectUseCase : AbstractRepository<Project>
     {
-        public UserUseCase(TaskContext context) : base(context, context.Users)
+        public ProjectUseCase(TaskContext context) : base(context, context.Projects)
         {
         }
 
         public int Count() => _set.Count;
-        public List<User> GetAll()
+        public List<Project> GetAll()
         {
             return base.GetAll().ToList();
         }
-        public void Add(User request)
+        public void Add(Project request)
         {
             base.Add(request);
         }
-        public void Update(User request)
+        public void Update(Project request)
         {
             var current = base.GetById(request.Id);
-            current.Email = request.Email;  
             current.Name = request.Name;
-            current.Userame = request.Userame;   
+            current.Description = request.Description;
+            current.StatusId = request.StatusId;
         }
         public void Remove(Guid id)
         {

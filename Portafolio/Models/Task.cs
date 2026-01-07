@@ -14,6 +14,5 @@ namespace Portafolio.Models
         public int AssignedToUserId { get; set; }
         public int CreatedByUserId { get; set; }
         public DateTime CreatedAt { get; set; }
-        public bool IsDeleted { get; set; }
     }
 }

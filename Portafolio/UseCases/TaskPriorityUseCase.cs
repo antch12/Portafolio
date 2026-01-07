@@ -4,27 +4,25 @@ using System.Collections.Generic;
 
 namespace Portafolio.UseCases
 {
-    public class UserUseCase : AbstractRepository<User>
+    public class TaskPriorityUseCase : AbstractRepository<TaskPriority>
     {
-        public UserUseCase(TaskContext context) : base(context, context.Users)
+        public TaskPriorityUseCase(TaskContext context) : base(context, context.TaskPriorities)
         {
         }
 
         public int Count() => _set.Count;
-        public List<User> GetAll()
+        public List<TaskPriority> GetAll()
         {
             return base.GetAll().ToList();
         }
-        public void Add(User request)
+        public void Add(TaskPriority request)
         {
             base.Add(request);
         }
-        public void Update(User request)
+        public void Update(TaskPriority request)
         {
             var current = base.GetById(request.Id);
-            current.Email = request.Email;  
             current.Name = request.Name;
-            current.Userame = request.Userame;   
         }
         public void Remove(Guid id)
         {

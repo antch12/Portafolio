@@ -12,7 +12,5 @@
         public List<Task> Tasks = new();
         public List<TaskPriority> TaskPriorities = new();
         public List<TaskStatus> TaskStatus = new();
-        public List<Comment> Comments = new();
-        public List<AuditLog> AuditLogs = new();
     }
 }
